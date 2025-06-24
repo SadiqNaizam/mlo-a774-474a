@@ -1,19 +1,31 @@
 import React from 'react';
-import LoginForm from '@/components/Login/LoginForm';
-import CenterLayout from '@/components/layout/CenterLayout';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import SplashPage from './SplashPage';
+import OnboardingPage from './OnboardingPage';
+import DashboardPage from './DashboardPage';
+import SearchPage from './SearchPage';
+import SettingsPage from './SettingsPage';
 
 /**
- * The main login page for the application.
- * 
- * This page utilizes a `CenterLayout` to position the `LoginForm` component
- * in the middle of the screen, creating a focused user experience for login.
+ * Main application component that sets up the router.
+ * This acts as the root of the BankEase application.
  */
-const IndexPage: React.FC = () => {
+const App: React.FC = () => {
   return (
-    <CenterLayout>
-      <LoginForm />
-    </CenterLayout>
+    <Router>
+      <div className="max-w-md mx-auto bg-background min-h-screen shadow-2xl">
+        <Routes>
+          <Route path="/" element={<SplashPage />} />
+          <Route path="/onboarding" element={<OnboardingPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+          {/* A catch-all route can be added here for 404s */}
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
-export default IndexPage;
+export default App;
