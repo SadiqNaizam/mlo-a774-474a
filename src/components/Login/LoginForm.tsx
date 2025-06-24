@@ -139,7 +139,7 @@ const LoginForm: React.FC = () => {
       </CardContent>
       <CardFooter className="p-6 pt-0">
         <p className="w-full text-center text-sm text-muted-foreground">
-          Don't have an account?{\' '}
+          Don&apos;t have an account?{' '}
           <Button variant="link" className="p-0 h-auto ml-1 text-primary hover:text-primary/80">
             SignUp
           </Button>
