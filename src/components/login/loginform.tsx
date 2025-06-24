@@ -3,6 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { Loader2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -33,6 +34,7 @@ type LoginFormValues = z.infer<typeof formSchema>;
 
 const LoginForm: React.FC = () => {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const navigate = useNavigate();
 
   // Initialize the form with react-hook-form
   const form = useForm<LoginFormValues>({
@@ -52,6 +54,7 @@ const LoginForm: React.FC = () => {
     setTimeout(() => {
       setIsLoading(false);
       // In a real app, you would handle success/error states here
+      navigate('/dashboard');
     }, 2000);
   };
 
@@ -68,7 +71,7 @@ const LoginForm: React.FC = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  {/* Customizing Input to match the image style */}
+                  {/* Customizing Input to match the image style */ }
                   <FormControl>
                     <div className="relative">
                       <Input
@@ -76,14 +79,14 @@ const LoginForm: React.FC = () => {
                         type="email"
                         placeholder=" " // Required for the label animation
                         className={cn(
-                          'peer h-10 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-primary bg-transparent rounded-none p-0',
+                          'peer h-10 w-full border-b-2 border-input text-foreground placeholder-transparent focus:outline-none focus:border-primary bg-transparent rounded-none p-0',
                           'focus-visible:ring-0 focus-visible:ring-offset-0'
                         )}
                         {...field}
                       />
                       <FormLabel
                         htmlFor="email"
-                        className="absolute left-0 -top-3.5 text-muted-foreground text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm"
+                        className="absolute left-0 -top-3.5 text-muted-foreground text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-muted-foreground peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm"
                       >
                         Email Address
                       </FormLabel>
@@ -106,14 +109,14 @@ const LoginForm: React.FC = () => {
                           type="password"
                           placeholder=" " // Required for the label animation
                           className={cn(
-                            'peer h-10 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-primary bg-transparent rounded-none p-0',
+                            'peer h-10 w-full border-b-2 border-input text-foreground placeholder-transparent focus:outline-none focus:border-primary bg-transparent rounded-none p-0',
                             'focus-visible:ring-0 focus-visible:ring-offset-0'
                           )}
                           {...field}
                         />
                         <FormLabel
                           htmlFor="password"
-                          className="absolute left-0 -top-3.5 text-muted-foreground text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm"
+                          className="absolute left-0 -top-3.5 text-muted-foreground text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-muted-foreground peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm"
                         >
                           Password
                         </FormLabel>
