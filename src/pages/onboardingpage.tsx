@@ -49,7 +49,7 @@ const OnboardingPage: React.FC = () => {
 
       <div className="pb-4">
         <Button asChild size="lg" className="w-full text-base transition-transform active:scale-95">
-          <Link to="/dashboard">Get Started</Link>
+          <Link to="/login">Get Started</Link>
         </Button>
       </div>
     </div>
