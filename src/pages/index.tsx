@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import SplashPage from './SplashPage';
 import OnboardingPage from './OnboardingPage';
+import LoginPage from './LoginPage';
 import DashboardPage from './DashboardPage';
 import SearchPage from './SearchPage';
 import SettingsPage from './SettingsPage';
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<SplashPage />} />
           <Route path="/onboarding" element={<OnboardingPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/settings" element={<SettingsPage />} />
