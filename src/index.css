@@ -6,35 +6,68 @@
 
 @layer base {
   :root {
-    --background: 211 100% 50%;
-    --foreground: 0 0% 100%;
+    /* Neutral Theme for BankEase */
+    --background: 220 14.3% 95.9%; /* Light Gray */
+    --foreground: 224 71.4% 4.1%; /* Dark Blue-Gray Text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 224 71.4% 4.1%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    /* Accent Color */
+    --primary: 211 100% 50%; /* Professional Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 220 9.1% 91.0%;
+    --muted-foreground: 224 7.1% 44.1%;
+
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 211 100% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  /* No dark mode specified in request, but keeping the block for structure */
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 220 14.3% 95.9%;
+    
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 220 14.3% 95.9%;
+
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 220 14.3% 95.9%;
 
     --primary: 211 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 0 0% 35.3%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
 
-    --accent: 211 100% 50%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 211 100% 50%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
     --ring: 211 100% 50%;
-
-    --radius: 0.5rem;
   }
 
   * {
@@ -43,5 +76,6 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
   }
 }
